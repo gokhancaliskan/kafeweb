@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 
 interface Product {
   _id: string;
@@ -23,7 +24,7 @@ const ProductList: React.FC<ProductListProps> = ({
           className="card bg-base-100 shadow-xl"
         >
           <figure>
-            <img
+            <Image
               src={product.image}
               alt={product.title}
               className="w-full h-48 object-cover"

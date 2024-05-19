@@ -1,23 +1,27 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const Header = () => {
   return (
     <header className="navbar">
       <div className="logo">
         <Link className="" href={""}>
-          <img src="/logos/fairytale.png" alt="" />
+          <Image src="/logos/fairytale.png" alt="" />
         </Link>
       </div>
       <div className="icons">
         <Link href="#">
-          <img src="/icons/facebook.png" alt="Facebook" />
+          <Image src="/icons/facebook.png" alt="Facebook" />
         </Link>
         <Link href="#">
-          <img src="/icons/youtube.png" alt="YouTube" />
+          <Image src="/icons/youtube.png" alt="YouTube" />
         </Link>
         <Link href="#">
-          <img src="/icons/instagram.png" alt="Instagram" />
+          <Image
+            src="/icons/instagram.png"
+            alt="Instagram"
+          />
         </Link>
       </div>
     </header>
