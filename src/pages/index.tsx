@@ -66,7 +66,7 @@ const Home = () => {
   return (
     <div>
       <Header />
-      <div className="container mx-auto">
+      <div className="">
         {!selectedMain ? (
           <MainArea
             mainItems={posts}

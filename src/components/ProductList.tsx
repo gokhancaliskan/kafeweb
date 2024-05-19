@@ -17,25 +17,22 @@ const ProductList: React.FC<ProductListProps> = ({
   products,
 }) => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4">
+    <div className="">
       {products.map((product) => (
-        <div
-          key={product._id}
-          className="card bg-base-100 shadow-xl"
-        >
+        <div key={product._id} className="card">
           <figure>
             <Image
-              src={product.image}
+              src={"/logos/fairytalelogo.svg"}
               alt={product.title}
-              className="w-full h-48 object-cover"
+              className="card-image"
+              width={30}
+              height={30}
             />
           </figure>
           <div className="card-body">
             <h2 className="card-title">{product.title}</h2>
             <p>{product.content}</p>
-            <p className="text-lg font-bold">
-              {product.price}₺
-            </p>
+            <p className="card-price">{product.price}₺</p>
           </div>
         </div>
       ))}
