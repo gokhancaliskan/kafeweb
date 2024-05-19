@@ -43,7 +43,7 @@ const Home = () => {
     const categories = posts
       .filter((post) => post.main === main && post.category)
       .map((post) => post.category);
-    return [...new Set(categories)]; // Unique kategoriler
+    return [...new Set(categories)];
   };
 
   const getPostsByMainAndCategory = (
@@ -66,7 +66,7 @@ const Home = () => {
   return (
     <div>
       <Header />
-      <div className="">
+      <div className="container">
         {!selectedMain ? (
           <MainArea
             mainItems={posts}

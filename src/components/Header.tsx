@@ -10,12 +10,12 @@ const Header = () => {
           <Image
             src="/logos/fairytale.png"
             alt=""
-            width={240}
-            height={60}
+            width={280}
+            height={70}
           />
         </Link>
       </div>
-      <div className="icons">
+      <div className="social-icons">
         <Link href="#">
           <Image
             src="/icons/facebook.png"

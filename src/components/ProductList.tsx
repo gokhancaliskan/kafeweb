@@ -1,5 +1,4 @@
 import React from "react";
-import Image from "next/image";
 
 interface Product {
   _id: string;
@@ -17,22 +16,20 @@ const ProductList: React.FC<ProductListProps> = ({
   products,
 }) => {
   return (
-    <div className="">
+    <div className="product-list">
       {products.map((product) => (
         <div key={product._id} className="card">
           <figure>
-            <Image
-              src={"/logos/fairytalelogo.svg"}
+            <img
+              src={product.image}
               alt={product.title}
-              className="card-image"
-              width={30}
-              height={30}
+              className="product-image"
             />
           </figure>
           <div className="card-body">
             <h2 className="card-title">{product.title}</h2>
             <p>{product.content}</p>
-            <p className="card-price">{product.price}₺</p>
+            <p className="price">{product.price}₺</p>
           </div>
         </div>
       ))}

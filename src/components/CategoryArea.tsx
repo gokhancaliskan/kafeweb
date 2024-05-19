@@ -12,11 +12,13 @@ const CategoryArea: React.FC<CategoryAreaProps> = ({
   selectedCategory,
 }) => {
   return (
-    <div className="category">
+    <div className="category-area">
       {categories.map((category) => (
         <button
           key={category}
-          className="btn"
+          className={`category-button ${
+            category === selectedCategory ? "selected" : ""
+          }`}
           onClick={() => onCategoryClick(category)}
         >
           {category}

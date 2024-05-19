@@ -14,18 +14,16 @@ const MainArea: React.FC<MainAreaProps> = ({
   ];
 
   return (
-    <div className="mains">
-      <div className="btn">
-        {uniqueMains.map((main, index) => (
-          <button
-            key={index}
-            className="btn-main"
-            onClick={() => onMainClick(main)}
-          >
-            {main}
-          </button>
-        ))}
-      </div>
+    <div className="main-area">
+      {uniqueMains.map((main, index) => (
+        <button
+          key={index}
+          className="main-button"
+          onClick={() => onMainClick(main)}
+        >
+          {main}
+        </button>
+      ))}
     </div>
   );
 };
