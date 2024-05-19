@@ -1,4 +1,4 @@
-body {
+* {
   margin: 0;
   font-family: Arial, sans-serif;
 }
@@ -25,24 +25,13 @@ body {
   height: 24px;
 }
 
-.flex {
-  display: flex;
-}
-
-.flex-wrap {
-  flex-wrap: wrap;
-}
-
-.justify-center {
-  justify-content: center;
+.mains {
+  width: 100%;
 }
 
 .btn {
-  padding: 0.5rem 1rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background-color: #f9f9f9;
-  cursor: pointer;
+  background-color: #f0f0f0;
+  width: 100%;
 }
 
 .btn:hover {

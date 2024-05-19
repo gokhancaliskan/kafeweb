@@ -14,16 +14,18 @@ const MainArea: React.FC<MainAreaProps> = ({
   ];
 
   return (
-    <div className="flex flex-wrap justify-center p-4 gap-4">
-      {uniqueMains.map((main, index) => (
-        <button
-          key={index}
-          className="btn"
-          onClick={() => onMainClick(main)}
-        >
-          {main}
-        </button>
-      ))}
+    <div className="mains">
+      <div className="btn">
+        {uniqueMains.map((main, index) => (
+          <button
+            key={index}
+            className="btn-main"
+            onClick={() => onMainClick(main)}
+          >
+            {main}
+          </button>
+        ))}
+      </div>
     </div>
   );
 };

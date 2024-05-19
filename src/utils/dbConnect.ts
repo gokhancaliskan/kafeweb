@@ -9,11 +9,12 @@ if (!MONGODB_URI) {
 }
 
 interface MongooseCache {
-  conn: mongoose.Connection | null;
-  promise: Promise<mongoose.Connection> | null;
+  conn: typeof mongoose | null;
+  promise: Promise<typeof mongoose> | null;
 }
 
 declare global {
+  // This will prevent TS from complaining about the global `mongoose` object in the node environment
   var mongoose: MongooseCache;
 }
 
@@ -32,14 +33,14 @@ async function dbConnect() {
   }
 
   if (!cached.promise) {
-    const opts: mongoose.ConnectOptions = {
+    const opts = {
       bufferCommands: false,
     };
 
     cached.promise = mongoose
       .connect(MONGODB_URI, opts)
       .then((mongoose) => {
-        return mongoose.connection;
+        return mongoose;
       });
   }
   cached.conn = await cached.promise;
