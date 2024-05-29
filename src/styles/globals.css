@@ -11,21 +11,9 @@ body {
   padding: 1rem;
 }
 
-.logo a {
-  text-decoration: none;
-  color: #333;
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
 .social-icons {
   display: flex;
   gap: 1rem;
-}
-
-.social-icons img {
-  width: 24px;
-  height: 24px;
 }
 
 .main-area {
@@ -61,7 +49,7 @@ body {
 
 .category-button {
   text-transform: capitalize;
-  width: 20%;
+  width: 25%;
   background-color: #11191f;
   color: #ffd700;
   padding: 0.8rem;
@@ -77,39 +65,90 @@ body {
 }
 
 .product-list {
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fit,
-    minmax(200px, 1fr)
-  );
-  gap: 1rem;
-  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  padding: 20px;
 }
 
 .card {
-  display: flex;
-  border: 1px solid #e0e0e0;
-  border-radius: 4px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: relative;
+  width: 400px; /* Kartın genişliğini belirleyebilirsiniz */
+  height: 400px; /* Kartın yüksekliğini belirleyebilirsiniz */
+  border-radius: 15px;
   overflow: hidden;
+  transition: transform 0.2s;
+  margin: 20px; /* Kartlar arasındaki boşluk */
 }
 
-.card img {
-  width: 30%;
-  height: auto;
+.card:hover {
+  transform: scale(1.05);
+}
+
+.product-image {
+  width: 100%;
+  height: 100%;
   object-fit: cover;
 }
 
 .card-body {
-  padding: 1rem;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  box-sizing: border-box;
+  color: white;
+  z-index: 1; /* Üst katmanda olmasını sağlar */
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Gölge rengi ve opaklık */
+  z-index: 1; /* Arka planda olmasını sağlar */
+}
+.card:hover::before {
+  background: rgba(
+    0,
+    0,
+    0,
+    0
+  ); /* Hover durumunda gölgeyi kaldırır */
 }
 
 .card-title {
-  font-size: 1.25rem;
-  font-weight: bold;
+  font-size: 2.2em;
+  margin: 0;
+  align-self: flex-start;
+}
+
+.content {
+  font-size: 1.5em;
+  text-align: center;
+  margin: auto 0;
 }
 
 .price {
-  font-size: 1.125rem;
-  font-weight: bold;
+  font-size: 2em;
+  margin: 0;
+  align-self: flex-end;
+  text-align: right;
+}
+
+.card:hover .card-body {
+  display: none;
 }
