@@ -11,8 +11,8 @@ const Header = () => {
           <Image
             src="/logos/fairytale.png"
             alt="Fairytale Logo"
-            width={280}
-            height={70}
+            width={240}
+            height={60}
           />
         </Link>
       </div>
@@ -21,24 +21,24 @@ const Header = () => {
           <Image
             src="/icons/facebook.png"
             alt="Facebook"
-            width={24}
-            height={24}
+            width={32}
+            height={32}
           />
         </Link>
         <Link href="https://www.youtube.com/@fairytalecoffees">
           <Image
             src="/icons/youtube.png"
             alt="YouTube"
-            width={24}
-            height={24}
+            width={32}
+            height={32}
           />
         </Link>
         <Link href="https://www.instagram.com/coffeefairytale/">
           <Image
             src="/icons/instagram.png"
             alt="Instagram"
-            width={24}
-            height={24}
+            width={32}
+            height={32}
           />
         </Link>
       </div>
