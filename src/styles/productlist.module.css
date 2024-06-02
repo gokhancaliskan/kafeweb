@@ -1,0 +1,128 @@
+.productList {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  margin: 0;
+  padding: 20px;
+}
+
+.card {
+  position: relative;
+  width: 90%; /* Kartın genişliğini belirleyebilirsiniz */
+  max-width: 400px; /* Maksimum genişlik */
+  height: 400px; /* Kartın yüksekliğini belirleyebilirsiniz */
+  border-radius: 15px;
+  overflow: hidden;
+  transition: transform 0.2s;
+  margin: 20px; /* Kartlar arasındaki boşluk */
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.productImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardBody {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  box-sizing: border-box;
+  color: white;
+  z-index: 1; /* Üst katmanda olmasını sağlar */
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Gölge rengi ve opaklık */
+  z-index: 1; /* Arka planda olmasını sağlar */
+}
+
+.card:hover::before {
+  background: rgba(
+    0,
+    0,
+    0,
+    0
+  ); /* Hover durumunda gölgeyi kaldırır */
+}
+
+.cardTitle {
+  font-size: 2.2em;
+  margin: 0;
+  align-self: flex-start;
+}
+
+.content {
+  font-size: 1.5em;
+  text-align: center;
+  margin: auto 0;
+}
+
+.price {
+  font-size: 2em;
+  margin: 0;
+  align-self: flex-end;
+  text-align: right;
+}
+
+.card:hover .cardBody {
+  display: none;
+}
+
+/* Responsive Styles */
+@media (max-width: 400px) {
+  .card {
+    width: 100%;
+    height: 350px;
+  }
+
+  .cardTitle {
+    font-size: 1.8em;
+  }
+
+  .content {
+    font-size: 1.2em;
+  }
+
+  .price {
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 360px) {
+  .card {
+    height: 300px;
+  }
+
+  .cardTitle {
+    font-size: 1.6em;
+  }
+
+  .content {
+    font-size: 1em;
+  }
+
+  .price {
+    font-size: 1.3em;
+  }
+}

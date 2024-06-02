@@ -1,22 +1,23 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import styles from "../styles/header.module.css"; // CSS modülünü import ettik
 
 const Header = () => {
   return (
-    <header className="navbar">
-      <div className="logo">
-        <Link className="" href="/">
+    <header className={styles.navbar}>
+      <div className={styles.logo}>
+        <Link href="/">
           <Image
             src="/logos/fairytale.png"
-            alt=""
+            alt="Fairytale Logo"
             width={280}
             height={70}
           />
         </Link>
       </div>
-      <div className="social-icons">
-        <Link href="#">
+      <div className={styles.socialIcons}>
+        <Link href="https://www.facebook.com/profile.php?id=61560067397187">
           <Image
             src="/icons/facebook.png"
             alt="Facebook"
@@ -24,7 +25,7 @@ const Header = () => {
             height={24}
           />
         </Link>
-        <Link href="#">
+        <Link href="https://www.youtube.com/@fairytalecoffees">
           <Image
             src="/icons/youtube.png"
             alt="YouTube"
@@ -32,7 +33,7 @@ const Header = () => {
             height={24}
           />
         </Link>
-        <Link href="#">
+        <Link href="https://www.instagram.com/coffeefairytale/">
           <Image
             src="/icons/instagram.png"
             alt="Instagram"

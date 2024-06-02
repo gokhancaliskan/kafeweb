@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import styles from "../styles/productlist.module.css"; // CSS modülünü import ettik
 
 interface Product {
   _id: string;
@@ -17,20 +18,24 @@ const ProductList: React.FC<ProductListProps> = ({
   products,
 }) => {
   return (
-    <div className="product-list">
+    <div className={styles.productList}>
       {products.map((product) => (
-        <div key={product._id} className="card">
+        <div key={product._id} className={styles.card}>
           <Image
             src={product.image}
             alt={product.title}
-            className="product-image"
+            className={styles.productImage}
             layout="fill"
             objectFit="cover"
           />
-          <div className="card-body">
-            <h2 className="card-title">{product.title}</h2>
-            <p className="content">{product.content}</p>
-            <p className="price">{product.price}₺</p>
+          <div className={styles.cardBody}>
+            <h2 className={styles.cardTitle}>
+              {product.title}
+            </h2>
+            <p className={styles.content}>
+              {product.content}
+            </p>
+            <p className={styles.price}>{product.price}₺</p>
           </div>
         </div>
       ))}

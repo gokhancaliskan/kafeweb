@@ -1,0 +1,14 @@
+/* Responsive Styles */
+@media (max-width: 768px) {
+}
+
+@media (max-width: 480px) {
+  .footerLink {
+    position: absolute;
+    bottom: 10%;
+    right: 6%;
+    z-index: 2;
+    width: 60px;
+    height: 60px;
+  }
+}

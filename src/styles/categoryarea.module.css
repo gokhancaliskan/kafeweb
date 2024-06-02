@@ -1,0 +1,32 @@
+/* Responsive Styles */
+@media (max-width: 768px) {
+}
+
+@media (max-width: 480px) {
+  .categoryArea {
+    background-color: #ffd700;
+    border: #ffd700;
+    display: flex;
+    overflow-x: auto;
+    z-index: 2;
+  }
+
+  .categoryButton {
+    text-transform: capitalize;
+    width: 25%;
+    background-color: #ffd700;
+    color: #11191f;
+    padding: 0.8rem;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border: none;
+    margin-left: -2%;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .categoryButton:hover,
+  .categoryButton.selected {
+    background-color: #11191f;
+    color: #ffd700;
+  }
+}

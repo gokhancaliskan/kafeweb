@@ -1,6 +1,8 @@
-import Footer from "@/components/Footer";
+import React from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import Footer from "../components/Footer";
+import styles from "../styles/home.module.css"; // CSS modülünü import ettik
 
 const Home = () => {
   const router = useRouter();
@@ -12,8 +14,8 @@ const Home = () => {
   };
 
   return (
-    <div className="home-container">
-      <div className="image-container">
+    <div className={styles.homeContainer}>
+      <div className={styles.imageContainer}>
         <Image
           src="/logos/kave.jpg"
           alt="Main Image"
@@ -21,16 +23,16 @@ const Home = () => {
           objectFit="cover"
           quality={100}
         />
-        <div className="text-buttons">
+        <div className={styles.textButtons}>
           <div
-            className="text-button"
+            className={styles.textButton}
             onClick={() => handleNavigation("icecek")}
           >
             Menü
           </div>
+          <Footer />
         </div>
       </div>
-      <Footer />
     </div>
   );
 };

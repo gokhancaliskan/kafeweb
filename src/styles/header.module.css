@@ -1,0 +1,25 @@
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .logo {
+    display: flex;
+    /* logo için özel stil eklemek isterseniz */
+  }
+
+  .socialIcons {
+    display: flex;
+    gap: 1rem;
+  }
+}

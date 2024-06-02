@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "../styles/mainarea.module.css"; // CSS modülünü import ettik
 
 interface MainAreaProps {
   mainItems: { main: string }[];
@@ -16,12 +17,12 @@ const MainArea: React.FC<MainAreaProps> = ({
   ];
 
   return (
-    <div className="main-area">
+    <div className={styles.mainArea}>
       {uniqueMains.map((main, index) => (
         <button
           key={index}
-          className={`main-button ${
-            main === selectedMain ? "selected" : ""
+          className={`${styles.mainButton} ${
+            main === selectedMain ? styles.selected : ""
           }`}
           onClick={() => onMainClick(main)}
         >

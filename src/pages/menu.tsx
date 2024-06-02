@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import MainArea from "../components/MainArea";
 import CategoryArea from "../components/CategoryArea";
 import ProductList from "../components/ProductList";
+import styles from "../styles/menu.module.css"; // CSS modülünü import ettik
 
 interface Post {
   _id: string;
@@ -79,7 +80,7 @@ const Menu = () => {
   };
 
   return (
-    <div className="container">
+    <div className={styles.container}>
       {!selectedMain ? (
         <MainArea
           mainItems={posts}

@@ -1,0 +1,44 @@
+/* Responsive Styles */
+@media (max-width: 768px) {
+}
+
+@media (max-width: 480px) {
+  .homeContainer {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+  }
+
+  .imageContainer {
+    position: relative;
+    width: 100%;
+    height: calc(
+      100vh - 70px
+    ); /* Adjust the height to subtract the header */
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .textButtons {
+    position: absolute;
+    bottom: 8%; /* Butonun yukarı çıkması için değiştirildi */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+  }
+
+  .textButton {
+    width: 130px;
+    height: 130px;
+    background-color: #ffd700;
+    font-size: 1.5em;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import styles from "../styles/categoryarea.module.css"; // CSS modülünü import ettik
 
 interface CategoryAreaProps {
   categories: string[];
@@ -12,12 +13,14 @@ const CategoryArea: React.FC<CategoryAreaProps> = ({
   selectedCategory,
 }) => {
   return (
-    <div className="category-area">
+    <div className={styles.categoryArea}>
       {categories.map((category) => (
         <button
           key={category}
-          className={`category-button ${
-            category === selectedCategory ? "selected" : ""
+          className={`${styles.categoryButton} ${
+            category === selectedCategory
+              ? styles.selected
+              : ""
           }`}
           onClick={() => onCategoryClick(category)}
         >

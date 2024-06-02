@@ -1,0 +1,30 @@
+/* Responsive Styles */
+@media (max-width: 768px) {
+}
+
+@media (max-width: 480px) {
+  .mainArea {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .mainButton {
+    width: 38%;
+    padding: 0.8rem;
+    background-color: #ffd700;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    border: none;
+    text-transform: uppercase;
+    margin: 0px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  .mainButton:hover,
+  .mainButton.selected {
+    background-color: #11191f;
+    color: #ffd700;
+  }
+}
