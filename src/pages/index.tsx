@@ -1,3 +1,4 @@
+import Footer from "@/components/Footer";
 import { useRouter } from "next/router";
 import Image from "next/image";
 
@@ -16,9 +17,9 @@ const Home = () => {
         <Image
           src="/logos/kave.jpg"
           alt="Main Image"
-          layout="responsive"
-          width={500}
-          height={800}
+          layout="fill"
+          objectFit="cover"
+          quality={100}
         />
         <div className="text-buttons">
           <div
@@ -29,6 +30,7 @@ const Home = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

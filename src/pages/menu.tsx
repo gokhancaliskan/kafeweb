@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-
 import MainArea from "../components/MainArea";
 import CategoryArea from "../components/CategoryArea";
 import ProductList from "../components/ProductList";
@@ -27,12 +26,28 @@ const Menu = () => {
   useEffect(() => {
     fetch("/api/posts")
       .then((response) => response.json())
-      .then((data) => setPosts(data));
+      .then((data) => {
+        setPosts(data);
+        if (data.length > 0) {
+          setSelectedMain(data[0].main);
+          const firstMainCategories = getCategories(
+            data[0].main
+          );
+          if (firstMainCategories.length > 0) {
+            setSelectedCategory(firstMainCategories[0]);
+          }
+        }
+      });
   }, []);
 
   const handleMainClick = (main: string) => {
     setSelectedMain(main);
-    setSelectedCategory(null);
+    const mainCategories = getCategories(main);
+    if (mainCategories.length > 0) {
+      setSelectedCategory(mainCategories[0]);
+    } else {
+      setSelectedCategory(null);
+    }
   };
 
   const handleCategoryClick = (category: string) => {
@@ -69,12 +84,14 @@ const Menu = () => {
         <MainArea
           mainItems={posts}
           onMainClick={handleMainClick}
+          selectedMain={selectedMain}
         />
       ) : (
         <div>
           <MainArea
             mainItems={posts}
             onMainClick={handleMainClick}
+            selectedMain={selectedMain}
           />
           {getCategories(selectedMain).length > 0 ? (
             <div>

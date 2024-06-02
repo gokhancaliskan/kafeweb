@@ -3,11 +3,13 @@ import React from "react";
 interface MainAreaProps {
   mainItems: { main: string }[];
   onMainClick: (main: string) => void;
+  selectedMain: string | null;
 }
 
 const MainArea: React.FC<MainAreaProps> = ({
   mainItems,
   onMainClick,
+  selectedMain,
 }) => {
   const uniqueMains = [
     ...new Set(mainItems.map((item) => item.main)),
@@ -18,7 +20,9 @@ const MainArea: React.FC<MainAreaProps> = ({
       {uniqueMains.map((main, index) => (
         <button
           key={index}
-          className="main-button"
+          className={`main-button ${
+            main === selectedMain ? "selected" : ""
+          }`}
           onClick={() => onMainClick(main)}
         >
           {main}

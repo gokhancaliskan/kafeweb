@@ -2,6 +2,7 @@ body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #11191f;
+  overflow: hidden;
 }
 
 .navbar {
@@ -14,6 +15,51 @@ body {
 .social-icons {
   display: flex;
   gap: 1rem;
+}
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.image-container {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(
+    100vh - 70px
+  ); /* Adjust the height to subtract the header */
+  overflow: hidden;
+  z-index: 1;
+}
+
+.text-buttons {
+  position: absolute;
+  bottom: 5%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: 2;
+}
+
+.text-button {
+  width: 130px;
+  height: 130px;
+  background-color: #ffd700;
+  font-size: 1.5em;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-link {
+  position: absolute;
+  bottom: 8%;
+  right: 6%;
+  z-index: 2;
 }
 
 .main-area {
@@ -33,7 +79,8 @@ body {
   text-transform: uppercase;
 }
 
-.main-button:hover {
+.main-button:hover,
+.main-button.selected {
   background-color: #11191f;
   color: #ffd700;
 }
@@ -59,7 +106,8 @@ body {
   margin-left: -2%;
 }
 
-.category-button:hover {
+.category-button:hover,
+.category-button.selected {
   background-color: #ffd700;
   color: #11191f;
 }
@@ -121,6 +169,7 @@ body {
   ); /* Gölge rengi ve opaklık */
   z-index: 1; /* Arka planda olmasını sağlar */
 }
+
 .card:hover::before {
   background: rgba(
     0,
@@ -151,35 +200,4 @@ body {
 
 .card:hover .card-body {
   display: none;
-}
-
-.home-container {
-  display: flex;
-  flex-direction: column;
-}
-
-.image-container {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
-.text-buttons {
-  position: absolute;
-
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  gap: 15%;
-}
-
-.text-button {
-  width: 130px;
-  height: 130px;
-  background-color: #ffd700;
-  font-size: 1.5em;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
