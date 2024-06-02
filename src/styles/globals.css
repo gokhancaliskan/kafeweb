@@ -152,3 +152,34 @@ body {
 .card:hover .card-body {
   display: none;
 }
+
+.home-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.text-buttons {
+  position: absolute;
+
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 15%;
+}
+
+.text-button {
+  width: 130px;
+  height: 130px;
+  background-color: #ffd700;
+  font-size: 1.5em;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

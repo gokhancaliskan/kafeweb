@@ -1,106 +1,33 @@
-import { useState, useEffect } from "react";
-import Header from "../components/Header";
-import MainArea from "../components/MainArea";
-import CategoryArea from "../components/CategoryArea";
-import ProductList from "../components/ProductList";
-
-interface Post {
-  _id: string;
-  main: string;
-  category: string;
-  image: string;
-  title: string;
-  content: string;
-  price: number;
-  number: number;
-}
+import { useRouter } from "next/router";
+import Image from "next/image";
 
 const Home = () => {
-  const [posts, setPosts] = useState<Post[]>([]);
-  const [selectedMain, setSelectedMain] = useState<
-    string | null
-  >(null);
-  const [selectedCategory, setSelectedCategory] = useState<
-    string | null
-  >(null);
+  const router = useRouter();
 
-  useEffect(() => {
-    fetch("/api/posts")
-      .then((response) => response.json())
-      .then((data) => setPosts(data));
-  }, []);
-
-  const handleMainClick = (main: string) => {
-    setSelectedMain(main);
-    setSelectedCategory(null);
-  };
-
-  const handleCategoryClick = (category: string) => {
-    setSelectedCategory(category);
-  };
-
-  const getCategories = (main: string) => {
-    const categories = posts
-      .filter((post) => post.main === main && post.category)
-      .map((post) => post.category);
-    return [...new Set(categories)];
-  };
-
-  const getPostsByMainAndCategory = (
-    main: string,
-    category?: string
-  ) => {
-    if (category) {
-      return posts.filter(
-        (post) =>
-          post.main === main && post.category === category
-      );
-    }
-    return posts.filter(
-      (post) =>
-        post.main === main &&
-        (!post.category || post.category === "")
-    );
+  const handleNavigation = (category: string) => {
+    router.push({
+      pathname: "/menu",
+    });
   };
 
   return (
-    <div>
-      <Header />
-      <div className="container">
-        {!selectedMain ? (
-          <MainArea
-            mainItems={posts}
-            onMainClick={handleMainClick}
-          />
-        ) : (
-          <div>
-            <MainArea
-              mainItems={posts}
-              onMainClick={handleMainClick}
-            />
-            {getCategories(selectedMain).length > 0 ? (
-              <div>
-                <CategoryArea
-                  categories={getCategories(selectedMain)}
-                  onCategoryClick={handleCategoryClick}
-                  selectedCategory={selectedCategory ?? ""}
-                />
-                <ProductList
-                  products={getPostsByMainAndCategory(
-                    selectedMain,
-                    selectedCategory ?? ""
-                  )}
-                />
-              </div>
-            ) : (
-              <ProductList
-                products={getPostsByMainAndCategory(
-                  selectedMain
-                )}
-              />
-            )}
+    <div className="home-container">
+      <div className="image-container">
+        <Image
+          src="/logos/kave.jpg"
+          alt="Main Image"
+          layout="responsive"
+          width={500}
+          height={800}
+        />
+        <div className="text-buttons">
+          <div
+            className="text-button"
+            onClick={() => handleNavigation("icecek")}
+          >
+            Menü
           </div>
-        )}
+        </div>
       </div>
     </div>
   );
