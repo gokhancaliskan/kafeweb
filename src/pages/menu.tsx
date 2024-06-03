@@ -99,12 +99,16 @@ const Menu = () => {
               <CategoryArea
                 categories={getCategories(selectedMain)}
                 onCategoryClick={handleCategoryClick}
-                selectedCategory={selectedCategory ?? ""}
+                selectedCategory={
+                  selectedCategory ??
+                  getCategories(selectedMain)[0]
+                }
               />
               <ProductList
                 products={getPostsByMainAndCategory(
                   selectedMain,
-                  selectedCategory ?? ""
+                  selectedCategory ??
+                    getCategories(selectedMain)[0]
                 )}
               />
             </div>

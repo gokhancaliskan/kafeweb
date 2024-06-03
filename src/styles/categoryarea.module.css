@@ -4,23 +4,23 @@
 
 @media (max-width: 480px) {
   .categoryArea {
-    background-color: #ffd700;
-    border: #ffd700;
     display: flex;
-    overflow-x: auto;
-    z-index: 2;
+    overflow-x: auto; /* X ekseninde kaydırılabilir */
+    background-color: #ffd700;
+    padding: 0.5rem 0;
+    white-space: nowrap; /* Butonların aynı satırda kalmasını sağlar */
   }
 
   .categoryButton {
+    flex: 0 0 auto; /* Butonların sabit boyutta kalmasını sağlar */
     text-transform: capitalize;
-    width: 25%;
     background-color: #ffd700;
     color: #11191f;
     padding: 0.8rem;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;
     border: none;
-    margin-left: -2%;
+    margin: 0 0.5rem; /* Butonlar arasında boşluk */
     transition: background-color 0.3s, color 0.3s;
   }
 
