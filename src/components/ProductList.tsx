@@ -22,7 +22,7 @@ const ProductList: React.FC<ProductListProps> = ({
       {products.map((product) => (
         <div key={product._id} className={styles.card}>
           <Image
-            src={product.image}
+            src={product.image || "/logos/no-image.png"}
             alt={product.title}
             className={styles.productImage}
             layout="fill"
