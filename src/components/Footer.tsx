@@ -6,7 +6,7 @@ import styles from "../styles/footer.module.css"; // CSS modülünü import etti
 const Footer = () => {
   return (
     <div className={styles.footerLink}>
-      <Link href={"https://wa.me/905421100178"}>
+      <Link href={"https://wa.me/905416489808"}>
         <Image
           src="/icons/whatsapp.png"
           alt="WhatsApp"
